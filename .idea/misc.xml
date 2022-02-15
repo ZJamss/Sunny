@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/studyRecord/project/Sunny/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14270833333333333" />
         <entry key="..\:/studyRecord/project/Sunny/app/src/main/res/layout/activity_weather.xml" value="0.1" />
         <entry key="..\:/studyRecord/project/Sunny/app/src/main/res/layout/forecast.xml" value="0.15081521739130435" />
         <entry key="..\:/studyRecord/project/Sunny/app/src/main/res/layout/forecast_item.xml" value="0.15081521739130435" />
@@ -10,6 +11,8 @@
         <entry key="..\:/studyRecord/project/Sunny/app/src/main/res/layout/life_index.xml" value="0.14673913043478262" />
         <entry key="..\:/studyRecord/project/Sunny/app/src/main/res/layout/now.xml" value="0.15081521739130435" />
         <entry key="..\:/studyRecord/project/Sunny/app/src/main/res/layout/place_item.xml" value="0.12708333333333333" />
+        <entry key="..\:/studyRecord/project/Sunny/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.13958333333333334" />
+        <entry key="..\:/studyRecord/project/Sunny/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.14270833333333333" />
       </map>
     </option>
   </component>
