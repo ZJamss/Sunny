@@ -14,19 +14,16 @@ import kotlin.system.exitProcess
  * @Author: ZJamss
  * @Create: 2022/2/15 20:31
  **/
-class ExceptionHandler private constructor(context: Context) : Thread.UncaughtExceptionHandler {
-
-    // 上下文对象
-    private val mContext = context
+class ExceptionHandler : Thread.UncaughtExceptionHandler {
 
     // 单例模式
     companion object {
         @SuppressLint("StaticFieldLeak")
         private var instance: ExceptionHandler? = null
-        fun getInstance(context: Context): ExceptionHandler? {
+        fun getInstance(): ExceptionHandler? {
             if (instance == null) {
                 synchronized(ExceptionHandler::class) {
-                    instance = ExceptionHandler(context)
+                    instance = ExceptionHandler()
                 }
             }
             return instance

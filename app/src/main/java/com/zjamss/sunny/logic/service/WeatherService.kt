@@ -1,43 +1,25 @@
 package com.zjamss.sunny.logic.service
 
-import com.zjamss.sunny.logic.exception.GlobalException
+
+import com.zjamss.sunny.SunnyApplication
+import com.zjamss.sunny.logic.model.DailyResponse
+import com.zjamss.sunny.logic.model.RealtimeResponse
 import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.await
-import java.lang.RuntimeException
-import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
-import kotlin.coroutines.suspendCoroutine
+import retrofit2.http.GET
+import retrofit2.http.Path
 
 /**
- * @Description: 天气服务
+ * @Program: 天气查询接口
+ * @Description:
  * @Author: ZJamss
- * @Create: 2022/2/15 21:48
+ * @Create: 2022-02-15 23:20
  **/
-object WeatherService {
+interface WeatherService {
 
-    private val placeService = ServiceCreator.create<PlaceService>()
+    @GET("v2.5/${SunnyApplication.TOKEN}/{lng},{lat}/realtime.json")
+    fun getRealtimeWeather(@Path("lng") lng: String, @Path("lat") lat: String): Call<RealtimeResponse>
 
-    suspend fun searchPlaces(query: String) = placeService.searchPlaces(query).await()
+    @GET("v2.5/${SunnyApplication.TOKEN}/{lng},{lat}/daily.json")
+    fun getDailyWeather(@Path("lng") lng: String, @Path("lat") lat: String): Call<DailyResponse>
 
-    private suspend fun <T> Call<T>.await(): T {
-        return suspendCoroutine { continuation ->
-            enqueue(object : Callback<T> {
-                override fun onResponse(call: Call<T>, response: Response<T>) {
-                    val body = response.body()
-                    if (body != null) {
-                        continuation.resume(body)
-                    } else {
-                        continuation.resumeWithException(GlobalException.ResponseBodyNullException())
-                    }
-                }
-
-                override fun onFailure(call: Call<T>, t: Throwable) {
-                    t.printStackTrace()
-                    continuation.resumeWithException(GlobalException.RequestUnsuccessfulException())
-                }
-            })
-        }
-    }
 }

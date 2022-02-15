@@ -10,7 +10,7 @@ class SunnyApplication : Application() {
     companion object{
 
         //彩云天气令牌token
-        const val TOKEN = ""
+        const val TOKEN = "W4IGrd1ginFLr79I"
 
         @SuppressLint("StaticFieldLeak")
         lateinit var CONTEXT: Context
@@ -20,6 +20,5 @@ class SunnyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         CONTEXT = applicationContext
-        ExceptionHandler.getInstance(this)
     }
 }

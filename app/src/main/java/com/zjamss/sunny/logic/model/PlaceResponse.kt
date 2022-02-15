@@ -3,7 +3,7 @@ package com.zjamss.sunny.logic.model
 import com.google.gson.annotations.SerializedName
 
 /**
-* @Description: 实体类
+* @Description: 地址
 * @Author: ZJamss
 * @Create: 2022/2/15 21:47
 **/
